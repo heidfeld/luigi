@@ -1,0 +1,16 @@
+.navigation {
+    width: 100%
+}
+
+.navigation__section {
+    list-style-type: none;
+    display: flex;
+}
+
+.navigation__section__row {
+    flex: 1 auto;
+}
+
+.navigation__section__row a {
+    text-decoration: none;
+}
