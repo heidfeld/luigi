@@ -1,25 +1,41 @@
 import React from 'react';
-import {BrowserRouter as Router} from "react-router-dom";
+import {
+  Switch,
+  Route,
+  BrowserRouter as Router, Link
+} from "react-router-dom";
 
 import './App.css';
 import Navigation from "./components/Navigation/Navigation";
+import Marwin from "./routes/Marwin/Marwin";
 
 function App() {
 
-  const navigationRows = [
-    {label: 'Coś', url: 'Url1'},
-    {label: 'Albo', url: 'Url2'},
-    {label: 'Ktoś', url: 'Url3'},
-    {label: 'Nie', url: 'Url4'},
-    {label: 'Wiem', url: 'Url5'}
-  ];
+    const HOME_PATH = '/';
+    const MARWIN_PATH = '/marwin';
+
+    const navigationRows = [
+        {label: 'Home', url: HOME_PATH},
+        {label: 'Marwin', url: MARWIN_PATH},
+        {label: 'Ktoś', url: 'Url3'},
+        {label: 'Nie', url: 'Url4'},
+        {label: 'Wiem', url: 'Url5'}
+    ];
 
   return (
-    <div className="App">
-      <Router>
-        <Navigation rows={navigationRows}/>
-      </Router>
-    </div>
+      <div className="App">
+        <Router>
+          <Navigation rows={navigationRows}/>
+          <Switch>
+            <Route path={MARWIN_PATH}>
+              <Marwin/>
+            </Route>
+            <Route path={HOME_PATH}>
+              Elo to stronka domowa.
+            </Route>
+          </Switch>
+        </Router>
+      </div>
   );
 }
 
