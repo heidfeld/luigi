@@ -1,0 +1,19 @@
+.football {
+    display: flex;
+}
+
+.football__table {
+    flex: 1 auto;
+}
+
+.football__table__content {
+    margin-top: 2em;
+}
+
+.football__table__title {
+    text-align: left;
+}
+
+.football__table__combobox {
+    width: 150px;
+}
